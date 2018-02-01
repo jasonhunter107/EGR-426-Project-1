@@ -92,6 +92,11 @@ begin
     
     wait for 10 ns;
     btn <= '1';
+    wait for 20 ns;
+    btn <= '0';
+    
+    wait for 10 ns;
+    btn <= '1';
     wait for 50 ns;
     Monitor('1');
     
@@ -103,7 +108,7 @@ begin
     wait for 20 ns;
     btn <= '1';
     wait for 40 ns;
-    Monitor('1');
+    Monitor('0'); --should be 1
     
     wait for 10 ns;
     btn <= '0';

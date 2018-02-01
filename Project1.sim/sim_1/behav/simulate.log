@@ -1,8 +1,10 @@
 Vivado Simulator 2017.2
 Time resolution is 1 ps
-     10 ns clk --> 1 output --> 0001
-     20 ns clk --> 1 output --> 0010
-    130 ns clk --> 1 output --> 1101
-Failure: Test failed
-Time: 130 ns  Iteration: 0  Process: /counter_tb/stim_proc  File: C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sim_1/new/counter_tb.vhd
-$finish called at time : 130 ns : File "C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sim_1/new/counter_tb.vhd" Line 89
+Note: Beginning of debouncer test
+Time: 100 ns  Iteration: 0  Process: /debouncer_tb/stim_proc  File: C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sim_1/new/debouncer_tb.vhd
+    290 ns btn -->1 cclk -->1 clr -->0 output -->1
+    350 ns btn -->0 cclk -->1 clr -->0 output -->0
+    410 ns btn -->1 cclk -->1 clr -->0 output -->1
+Failure: Test Failed
+Time: 410 ns  Iteration: 0  Process: /debouncer_tb/stim_proc  File: C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sim_1/new/debouncer_tb.vhd
+$finish called at time : 410 ns : File "C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sim_1/new/debouncer_tb.vhd" Line 111

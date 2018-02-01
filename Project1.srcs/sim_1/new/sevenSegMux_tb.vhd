@@ -50,23 +50,24 @@ end component;
 signal s : STD_LOGIC_VECTOR (1 downto 0);
 signal letter, an : STD_LOGIC_VECTOR (3 downto 0);
 
---Procedure Monitor (Shouldbe: in STD_LOGIC) is
---Variable lout: line;
+Procedure Monitor (Shouldbe: in STD_LOGIC_VECTOR (3 downto 0);
+                     Shouldbe1: in STD_LOGIC_VECTOR (3 downto 0)) is
+Variable lout: line;
 
---begin
---WRITE(lout, now, right, 10, ns);
---WRITE(lout, string'("s --> "));
---WRITE(lout, s);
---WRITE(lout, string'("letter --> "));
---WRITE(lout, letter);
---WRITE(lout, string'("an --> "));
---WRITE(lout, an);
---WRITELINE(OUTPUT, lout);
+begin
+WRITE(lout, now, right, 10, ns);
+WRITE(lout, string'(" s --> "));
+WRITE(lout, s);
+WRITE(lout, string'(" letter --> "));
+WRITE(lout, letter);
+WRITE(lout, string'(" an --> "));
+WRITE(lout, an);
+WRITELINE(OUTPUT, lout);
 
---Assert letter = Shouldbe Report "Test failed" SEVERITY FAILURE;
---Assert an = Shouldbe Report "Test failed" SEVERITY FAILURE;
+Assert letter = Shouldbe Report "Test failed" SEVERITY FAILURE;
+Assert an = Shouldbe1 Report "Test failed" SEVERITY FAILURE;
 
---end Monitor;
+end Monitor;
 
 
 begin
@@ -81,23 +82,27 @@ wait for 100 ns;
 
     s <= "00";
     wait for 1 ns;
-    Assert letter = "0000" REPORT "Failed Test 1" SEVERITY FAILURE;
-    Assert an = "0111" REPORT "Failed Test 1" SEVERITY FAILURE;
+    Monitor("0000","0111");
+--    Assert letter = "0000" REPORT "Failed Test 1" SEVERITY FAILURE;
+--    Assert an = "0111" REPORT "Failed Test 1" SEVERITY FAILURE;
     
     s <= "01";
     wait for 1 ns;
-    Assert letter = "0001" REPORT "Failed Test 2" SEVERITY FAILURE;
-    Assert an = "1011" REPORT "Failed Test 2" SEVERITY FAILURE;
+    Monitor("0001","1011");
+--    Assert letter = "0001" REPORT "Failed Test 2" SEVERITY FAILURE;
+--    Assert an = "1011" REPORT "Failed Test 2" SEVERITY FAILURE;
     
     s <= "10";
     wait for 1 ns;
-    Assert letter = "0010" REPORT "Failed Test 3" SEVERITY FAILURE;
-    Assert an = "1101" REPORT "Failed Test 3" SEVERITY FAILURE; --an = 1101
+    Monitor("1111","1111"); --should be ("0010","1101");
+--    Assert letter = "0010" REPORT "Failed Test 3" SEVERITY FAILURE;
+--    Assert an = "1101" REPORT "Failed Test 3" SEVERITY FAILURE; --an = 1101
     
     s <= "11";
     wait for 1 ns;
-    Assert letter = "0011" REPORT "Failed Test 4" SEVERITY FAILURE;
-    Assert an = "1110" REPORT "Failed Test 4" SEVERITY FAILURE;
+    Monitor("0011","1110");
+--    Assert letter = "0011" REPORT "Failed Test 4" SEVERITY FAILURE;
+--    Assert an = "1110" REPORT "Failed Test 4" SEVERITY FAILURE;
     
     wait;
     

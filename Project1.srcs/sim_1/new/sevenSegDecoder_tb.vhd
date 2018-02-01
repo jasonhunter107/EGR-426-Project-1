@@ -83,7 +83,7 @@ begin
       
      input_s <= "0010";
      wait for 1 ns;
-     Monitor ("1000111");
+     Monitor ("1000111"); --wrong output
      --Monitor ("0100100");
      
      input_s <= "0011";
