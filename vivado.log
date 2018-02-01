@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Wed Jan 24 16:35:07 2018
+# Process ID: 8728
+# Current directory: C:/Users/Jason/Documents/EGR426/Projects/Project1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1052 C:\Users\Jason\Documents\EGR426\Projects\Project1\Project1.xpr
+# Log file: C:/Users/Jason/Documents/EGR426/Projects/Project1/vivado.log
+# Journal file: C:/Users/Jason/Documents/EGR426/Projects/Project1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Jason/Documents/EGR426/Projects/Project1/Project1.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/Jason/Desktop/7seg_mux.vhd'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx2/Vivado/2017.2/data/ip'.
+open_project: Time (s): cpu = 00:00:30 ; elapsed = 00:00:15 . Memory (MB): peak = 722.164 ; gain = 64.309
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 24 16:36:25 2018...

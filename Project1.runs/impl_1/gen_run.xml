@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1517472538">
+  <File Type="PWROPT-DRC" Name="sevenSegTop_drc_pwropted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="sevenSegTop_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="sevenSegTop_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR-RPX" Name="sevenSegTop_power_routed.rpx"/>
+  <File Type="PA-TCL" Name="sevenSegTop.tcl"/>
+  <File Type="OPT-HWDEF" Name="sevenSegTop.hwdef"/>
+  <File Type="RDI-RDI" Name="sevenSegTop.vdi"/>
+  <File Type="OPT-DCP" Name="sevenSegTop_opt.dcp"/>
+  <File Type="OPT-DRC" Name="sevenSegTop_drc_opted.rpt"/>
+  <File Type="OPT-TIMING" Name="sevenSegTop_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="sevenSegTop_pwropt.dcp"/>
+  <File Type="PWROPT-TIMING" Name="sevenSegTop_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="sevenSegTop_placed.dcp"/>
+  <File Type="PLACE-IO" Name="sevenSegTop_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="sevenSegTop_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="sevenSegTop_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="sevenSegTop_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="sevenSegTop_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="sevenSegTop_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="sevenSegTop_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="sevenSegTop_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="sevenSegTop_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="sevenSegTop_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="sevenSegTop_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="sevenSegTop_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="sevenSegTop_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="sevenSegTop_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="sevenSegTop_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="sevenSegTop_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="sevenSegTop_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="sevenSegTop_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="sevenSegTop.bin"/>
+  <File Type="ROUTE-DRC-RPX" Name="sevenSegTop_drc_routed.rpx"/>
+  <File Type="BG-DRC" Name="sevenSegTop.drc"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="sevenSegTop_methodology_drc_routed.rpt"/>
+  <File Type="BITSTR-MSK" Name="sevenSegTop.msk"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="sevenSegTop_methodology_drc_routed.rpx"/>
+  <File Type="BG-BGN" Name="sevenSegTop.bgn"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="sevenSegTop_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="sevenSegTop_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="sevenSegTop_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="sevenSegTop_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="sevenSegTop_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="sevenSegTop_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="sevenSegTop_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="sevenSegTop_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="sevenSegTop_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="sevenSegTop_clock_utilization_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="sevenSegTop_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="sevenSegTop_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="sevenSegTop_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="sevenSegTop_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="sevenSegTop_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="sevenSegTop.bit"/>
+  <File Type="BITSTR-RBT" Name="sevenSegTop.rbt"/>
+  <File Type="BITSTR-NKY" Name="sevenSegTop.nky"/>
+  <File Type="BITSTR-BMM" Name="sevenSegTop_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="sevenSegTop.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="sevenSegTop.sysdef"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/counter.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/debouncer.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sevenSegDecoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sevenSegMux.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sevenSegTop.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/twoSecCounter.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="sevenSegTop"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/7seg_pins.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
