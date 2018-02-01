@@ -48,7 +48,7 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   open_checkpoint sevenSegTop_routed.dcp
-  set_property webtalk.parent_dir C:/Users/huntejas/Desktop/Project1/Project1.cache/wt [current_project]
+  set_property webtalk.parent_dir C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.cache/wt [current_project]
   catch { write_mem_info -force sevenSegTop.mmi }
   write_bitstream -force sevenSegTop.bit 
   catch {write_debug_probes -no_partial_ltxfile -quiet -force debug_nets}

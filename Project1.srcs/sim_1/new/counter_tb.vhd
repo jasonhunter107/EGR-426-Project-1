@@ -83,7 +83,13 @@ end process;
 stim_proc: process
 begin
     
-    wait for 100 ns;
+   -- wait for 100 ns;
+    
+    wait for 10 ns;
+    Monitor("0001");
+    
+    wait for 10 ns;
+    Monitor("0010");
     
     wait for CLK_period * 10;
 
