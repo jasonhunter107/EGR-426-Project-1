@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Sun Feb  4 15:09:41 2018
-# Process ID: 8916
+# Start of session at: Sun Feb  4 15:45:47 2018
+# Process ID: 3240
 # Current directory: C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.runs/synth_1
 # Command line: vivado.exe -log sevenSegTop.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sevenSegTop.tcl
 # Log file: C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.runs/synth_1/sevenSegTop.vds
@@ -15,33 +15,34 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t-cpg236'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t-cpg236'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9196 
+INFO: Helper process launched with PID 8432 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 306.336 ; gain = 82.953
+Starting RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 305.859 ; gain = 82.574
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'sevenSegTop' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:45]
-INFO: [Synth 8-3491] module 'sevenSegDecoder' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegDecoder.vhd:34' bound to instance 'u1' of component 'sevenSegDecoder' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:122]
+INFO: [Synth 8-3491] module 'sevenSegDecoder' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegDecoder.vhd:34' bound to instance 'u1' of component 'sevenSegDecoder' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:123]
 INFO: [Synth 8-638] synthesizing module 'sevenSegDecoder' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegDecoder.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'sevenSegDecoder' (1#1) [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegDecoder.vhd:41]
-INFO: [Synth 8-3491] module 'counter' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/counter.vhd:42' bound to instance 'c1' of component 'counter' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:123]
+INFO: [Synth 8-3491] module 'counter' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/counter.vhd:42' bound to instance 'c1' of component 'counter' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:124]
 INFO: [Synth 8-638] synthesizing module 'counter' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/counter.vhd:48]
 INFO: [Synth 8-256] done synthesizing module 'counter' (2#1) [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/counter.vhd:48]
-INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/debouncer.vhd:34' bound to instance 'd1' of component 'debouncer' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:124]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/debouncer.vhd:34' bound to instance 'd1' of component 'debouncer' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:125]
 INFO: [Synth 8-638] synthesizing module 'debouncer' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/debouncer.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'debouncer' (3#1) [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/debouncer.vhd:41]
-INFO: [Synth 8-3491] module 'sevenSegMux' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegMux.vhd:34' bound to instance 'm1' of component 'sevenSegMux' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:125]
+INFO: [Synth 8-3491] module 'sevenSegMux' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegMux.vhd:34' bound to instance 'm1' of component 'sevenSegMux' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:126]
 INFO: [Synth 8-638] synthesizing module 'sevenSegMux' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegMux.vhd:42]
 WARNING: [Synth 8-614] signal 'inputs' is read in the process but is not in the sensitivity list [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegMux.vhd:49]
 INFO: [Synth 8-256] done synthesizing module 'sevenSegMux' (4#1) [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegMux.vhd:42]
-INFO: [Synth 8-3491] module 'twoHzClkDivider' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/twoHzClkDivider.vhd:35' bound to instance 'cd1' of component 'twoHzClkDivider' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:126]
+INFO: [Synth 8-3491] module 'twoHzClkDivider' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/twoHzClkDivider.vhd:35' bound to instance 'cd1' of component 'twoHzClkDivider' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:127]
 INFO: [Synth 8-638] synthesizing module 'twoHzClkDivider' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/twoHzClkDivider.vhd:41]
 INFO: [Synth 8-256] done synthesizing module 'twoHzClkDivider' (5#1) [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/twoHzClkDivider.vhd:41]
-INFO: [Synth 8-3491] module 'msgArray' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/msgArray.vhd:34' bound to instance 'ma1' of component 'msgArray' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:127]
-INFO: [Synth 8-638] synthesizing module 'msgArray' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/msgArray.vhd:39]
-INFO: [Synth 8-256] done synthesizing module 'msgArray' (6#1) [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/msgArray.vhd:39]
+INFO: [Synth 8-3491] module 'msgArray' declared at 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/msgArray.vhd:34' bound to instance 'ma1' of component 'msgArray' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:128]
+INFO: [Synth 8-638] synthesizing module 'msgArray' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/msgArray.vhd:40]
+WARNING: [Synth 8-614] signal 'tempClk' is read in the process but is not in the sensitivity list [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/msgArray.vhd:51]
+INFO: [Synth 8-256] done synthesizing module 'msgArray' (6#1) [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/msgArray.vhd:40]
 INFO: [Synth 8-256] done synthesizing module 'sevenSegTop' (7#1) [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd:45]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 356.313 ; gain = 132.930
+Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 356.543 ; gain = 133.258
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -51,7 +52,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 356.313 ; gain = 132.930
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 356.543 ; gain = 133.258
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -67,27 +68,28 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 669.051 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 669.621 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:58 ; elapsed = 00:01:04 . Memory (MB): peak = 669.051 ; gain = 445.668
+Finished Constraint Validation : Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 669.621 ; gain = 446.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:58 ; elapsed = 00:01:04 . Memory (MB): peak = 669.051 ; gain = 445.668
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 669.621 ; gain = 446.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:58 ; elapsed = 00:01:04 . Memory (MB): peak = 669.051 ; gain = 445.668
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 669.621 ; gain = 446.336
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element clk_div_reg was removed.  [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/counter.vhd:61]
 WARNING: [Synth 8-6014] Unused sequential element clkCounter_reg was removed.  [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/twoHzClkDivider.vhd:53]
+WARNING: [Synth 8-327] inferring latch for variable 'tempClk_reg' [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/msgArray.vhd:54]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:59 ; elapsed = 00:01:05 . Memory (MB): peak = 669.051 ; gain = 445.668
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:59 ; elapsed = 00:01:02 . Memory (MB): peak = 669.621 ; gain = 446.336
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -157,11 +159,8 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element c1/clk_div_reg was removed.  [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/counter.vhd:61]
 WARNING: [Synth 8-6014] Unused sequential element cd1/clkCounter_reg was removed.  [C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/twoHzClkDivider.vhd:53]
-WARNING: [Synth 8-3332] Sequential element (d1/delay1_reg) is unused and will be removed from module sevenSegTop.
-WARNING: [Synth 8-3332] Sequential element (d1/delay2_reg) is unused and will be removed from module sevenSegTop.
-WARNING: [Synth 8-3332] Sequential element (d1/delay3_reg) is unused and will be removed from module sevenSegTop.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:07 . Memory (MB): peak = 669.051 ; gain = 445.668
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:01 ; elapsed = 00:01:05 . Memory (MB): peak = 669.621 ; gain = 446.336
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -173,13 +172,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:42 ; elapsed = 00:01:49 . Memory (MB): peak = 669.309 ; gain = 445.926
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:49 ; elapsed = 00:01:53 . Memory (MB): peak = 669.621 ; gain = 446.336
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:43 ; elapsed = 00:01:49 . Memory (MB): peak = 669.383 ; gain = 446.000
+Finished Timing Optimization : Time (s): cpu = 00:01:50 ; elapsed = 00:01:53 . Memory (MB): peak = 669.621 ; gain = 446.336
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -191,7 +190,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:43 ; elapsed = 00:01:49 . Memory (MB): peak = 689.602 ; gain = 466.219
+Finished Technology Mapping : Time (s): cpu = 00:01:50 ; elapsed = 00:01:54 . Memory (MB): peak = 685.742 ; gain = 462.457
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -215,7 +214,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 689.602 ; gain = 466.219
+Finished IO Insertion : Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 685.742 ; gain = 462.457
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -228,7 +227,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 689.602 ; gain = 466.219
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 685.742 ; gain = 462.457
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -240,25 +239,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 689.602 ; gain = 466.219
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 685.742 ; gain = 462.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 689.602 ; gain = 466.219
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 685.742 ; gain = 462.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 689.602 ; gain = 466.219
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 685.742 ; gain = 462.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 689.602 ; gain = 466.219
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 685.742 ; gain = 462.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -292,43 +291,46 @@ Report Cell Usage:
 |2     |CARRY4 |     7|
 |3     |LUT1   |    30|
 |4     |LUT2   |     7|
-|5     |LUT3   |     3|
+|5     |LUT3   |     4|
 |6     |LUT4   |    10|
 |7     |LUT5   |     4|
 |8     |LUT6   |    10|
 |9     |SRL16E |     4|
-|10    |FDCE   |     2|
+|10    |FDCE   |     5|
 |11    |FDRE   |    56|
-|12    |IBUF   |     2|
-|13    |OBUF   |    11|
+|12    |LD     |     1|
+|13    |IBUF   |     3|
+|14    |OBUF   |    11|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------+----------------+------+
 |      |Instance |Module          |Cells |
 +------+---------+----------------+------+
-|1     |top      |                |   147|
+|1     |top      |                |   153|
 |2     |  c1     |counter         |    31|
 |3     |  cd1    |twoHzClkDivider |    71|
-|4     |  ma1    |msgArray        |    31|
+|4     |  d1     |debouncer       |     4|
+|5     |  ma1    |msgArray        |    32|
 +------+---------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:46 ; elapsed = 00:01:52 . Memory (MB): peak = 689.602 ; gain = 466.219
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 685.742 ; gain = 462.457
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:01 ; elapsed = 00:01:23 . Memory (MB): peak = 689.602 ; gain = 153.480
-Synthesis Optimization Complete : Time (s): cpu = 00:01:46 ; elapsed = 00:01:53 . Memory (MB): peak = 689.602 ; gain = 466.219
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:10 ; elapsed = 00:01:31 . Memory (MB): peak = 685.742 ; gain = 149.379
+Synthesis Optimization Complete : Time (s): cpu = 00:01:53 ; elapsed = 00:01:57 . Memory (MB): peak = 685.742 ; gain = 462.457
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 9 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 1 instances were transformed.
+  LD => LDCE: 1 instances
 
-31 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+31 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:51 ; elapsed = 00:02:01 . Memory (MB): peak = 689.770 ; gain = 474.156
+synth_design: Time (s): cpu = 00:01:59 ; elapsed = 00:02:06 . Memory (MB): peak = 685.742 ; gain = 470.258
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.runs/synth_1/sevenSegTop.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.097 . Memory (MB): peak = 689.770 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Feb  4 15:11:59 2018...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 685.742 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Feb  4 15:48:11 2018...

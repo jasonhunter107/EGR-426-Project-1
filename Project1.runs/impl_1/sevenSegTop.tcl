@@ -47,6 +47,7 @@ start_step write_bitstream
 set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
+  set_param xicom.use_bs_reader 1
   open_checkpoint sevenSegTop_routed.dcp
   set_property webtalk.parent_dir C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.cache/wt [current_project]
   catch { write_mem_info -force sevenSegTop.mmi }

@@ -33,22 +33,33 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity msgArray is
     Port ( clk : in STD_LOGIC;
+           btn : in STD_LOGIC;
            msgOutput : out STD_LOGIC_VECTOR (15 downto 0));
 end msgArray;
 
 architecture Behavioral of msgArray is
 
 --signal tempMsg : STD_LOGIC_VECTOR (0 to 63);
-signal tempMsg: STD_LOGIC_VECTOR (0 to 63) := X"01234F56789AFFFF"; --Vector that holds the value of the bits that represents JASON HUNTER
+
+--Vector that holds the value of the bits (in HEX) that represents JASON HUNTER
+signal tempMsg: STD_LOGIC_VECTOR (0 to 63) := X"01234F56789AFFFF";
+signal tempClk : STD_LOGIC;
 
 
 begin
 
-process (clk)
+process (btn, clk)
 begin
-    if (rising_edge(clk)) then
+
+tempClk <= clk;
+
+    if (btn = '1') then
+    tempClk <= tempClk;
+    
+    elsif (tempClk'event and tempClk = '1') then
         tempMsg (0 to 59) <= tempMsg (4 to 63);
         tempMsg (60 to 63) <= tempMsg (0 to 3);
+        
     end if;
  end process;
  

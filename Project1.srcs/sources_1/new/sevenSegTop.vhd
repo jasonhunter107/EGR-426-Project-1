@@ -81,6 +81,7 @@ end component;
 
 component msgArray
     Port ( clk : in STD_LOGIC;
+           btn : in STD_LOGIC;
            msgOutput : out STD_LOGIC_VECTOR (15 downto 0)
            );
 end component;
@@ -93,7 +94,7 @@ end component;
 
 signal tempInput : STD_LOGIC_VECTOR (15 downto 0); --Letters in name
 signal tempLetter: STD_LOGIC_VECTOR (3 downto 0); --Individual letter for name going through decoder
-signal tempReset : STD_LOGIC;
+signal tempReset : STD_LOGIC; --determines if button is pressed
 signal temp_contr : STD_LOGIC_VECTOR (1 downto 0); --was (1 downto 0)
 signal temp_LEDCounter : STD_LOGIC_VECTOR (1 downto 0); --For switching between inputs in MUX
 signal tempAn : STD_LOGIC_VECTOR (1 downto 0); --AN signal thats outputted through MUX
@@ -124,6 +125,6 @@ c1: counter port map (clk => clk_100Mhz, reset => clr, output => temp_contr);
 d1: debouncer port map (btn => btnc, cclk => clk_100Mhz, clr => clr, outpt => tempReset);
 m1: sevenSegMux port map (inputs => tempInput ,s => temp_contr, letter => tempLetter, an => an);
 cd1: twoHzClkDivider port map (clk => clk_100Mhz, output => tempDivider);
-ma1: msgArray port map (clk => tempDivider, msgOutput => tempInput);
+ma1: msgArray port map (clk => tempDivider, btn => tempReset, msgOutput => tempInput);
 
 end Behavioral;

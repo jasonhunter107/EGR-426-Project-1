@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Sun Feb  4 15:16:12 2018
+| Date         : Sun Feb  4 15:52:13 2018
 | Host         : DESKTOP-IHS8QFI running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -warn_on_violation -max_paths 10 -file sevenSegTop_timing_summary_routed.rpt -rpx sevenSegTop_timing_summary_routed.rpx
 | Design       : sevenSegTop
@@ -52,11 +52,17 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 40 register/latch pins with no clock driven by root clock pin: clk_100Mhz (HIGH)
+ There are 43 register/latch pins with no clock driven by root clock pin: clk_100Mhz (HIGH)
 
  There are 2 register/latch pins with no clock driven by root clock pin: c1/clk_div_reg[10]/Q (HIGH)
 
- There are 20 register/latch pins with no clock driven by root clock pin: cd1/count_reg/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: d1/delay1_reg/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: d1/delay2_reg/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: d1/delay3_reg/Q (HIGH)
+
+ There are 20 register/latch pins with no clock driven by root clock pin: ma1/tempClk_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -71,14 +77,14 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 92 pins that are not constrained for maximum delay. (HIGH)
+ There are 119 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
 
 5. checking no_input_delay
 --------------------------
- There is 1 input port with no input delay specified. (HIGH)
+ There are 2 input ports with no input delay specified. (HIGH)
 
  There are 0 input ports with no input delay but user has a false path constraint.
 
