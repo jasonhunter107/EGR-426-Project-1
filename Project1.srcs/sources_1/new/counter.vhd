@@ -41,22 +41,41 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity counter is
     Port ( clk : in STD_LOGIC;
-           output : out STD_LOGIC_VECTOR (3 downto 0));
+           reset : in STD_LOGIC;
+           output : out STD_LOGIC_VECTOR (1 downto 0));
 end counter;
 
 architecture Behavioral of counter is
 
-SIGNAL temp: STD_LOGIC_VECTOR (3 downto 0) := "0000";
-
+SIGNAL temp: STD_LOGIC_VECTOR (1 downto 0) := "00";
+signal clk_div: std_logic_vector (10 downto 0); --Only use (10 downto 0) which is 11 bits. which is 2046 (2047 - 1) cycles.
+--  (speed/desiredSpeed)/2 = (100 Mhz/ 24 kHz)/2 = 2046 cycles.
 begin 
-    process(clk)
-    begin
-        if (rising_edge(clk)) then
-        temp <= temp + 1;
-        end if;
-    end process;
+
+ClkDivider: process (clk)
+begin
+--    if (reset = '1') then
+--    temp <= "00";
     
-    output <= temp;
+    if (rising_edge(clk)) then
+    clk_div <= clk_div + 1;
+    
+    end if;
+ end process;
+ 
+ Counter: process(clk_div, reset)
+ begin
+ 
+   if (reset = '1') then
+   temp <= "00";
+   
+ elsif rising_edge(clk_div(10)) then
+    temp <= temp + 1;
+    end if;
+    
+  end process;
+    
+ output <= temp;
 
 
 end Behavioral;

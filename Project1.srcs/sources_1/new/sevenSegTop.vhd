@@ -53,7 +53,8 @@ end component;
 
 component counter
     Port ( clk : in STD_LOGIC;
-           output : out STD_LOGIC_VECTOR (3 downto 0)
+           reset : in STD_LOGIC;
+           output : out STD_LOGIC_VECTOR (1 downto 0)
            );
 end component;
 
@@ -65,10 +66,22 @@ component debouncer
 end component;
 
 component sevenSegMux 
-    Port ( --inputs : in STD_LOGIC_VECTOR ( 3 downto 0);
+    Port ( inputs : in STD_LOGIC_VECTOR ( 15 downto 0);
            s : in STD_LOGIC_VECTOR (1 downto 0);
            letter : out STD_LOGIC_VECTOR (3 downto 0);
            an : out STD_LOGIC_VECTOR (3 downto 0)
+           );
+end component;
+
+component twoHzClkDivider 
+    Port ( clk : in STD_LOGIC;
+           output : out STD_LOGIC
+           );
+end component;
+
+component msgArray
+    Port ( clk : in STD_LOGIC;
+           msgOutput : out STD_LOGIC_VECTOR (15 downto 0)
            );
 end component;
 
@@ -78,11 +91,13 @@ end component;
 -- when "00" => letter <= x (3 downto 0); an <= "0111";
 --signal y : STD_LOGIC_VECTOR (3 downto 0);
 
-signal tempLetter: STD_LOGIC_VECTOR (3 downto 0);
+signal tempInput : STD_LOGIC_VECTOR (15 downto 0); --Letters in name
+signal tempLetter: STD_LOGIC_VECTOR (3 downto 0); --Individual letter for name going through decoder
 signal tempReset : STD_LOGIC;
-signal temp_contr : STD_LOGIC_VECTOR (3 downto 0); --was (1 downto 0)
-signal temp_LEDCounter : STD_LOGIC_VECTOR (1 downto 0);
-signal tempAn : STD_LOGIC_VECTOR (1 downto 0);
+signal temp_contr : STD_LOGIC_VECTOR (1 downto 0); --was (1 downto 0)
+signal temp_LEDCounter : STD_LOGIC_VECTOR (1 downto 0); --For switching between inputs in MUX
+signal tempAn : STD_LOGIC_VECTOR (1 downto 0); --AN signal thats outputted through MUX
+signal tempDivider : STD_LOGIC; --Output of the 2Hz divider
 
 begin
 
@@ -99,15 +114,16 @@ begin
 --    end case;
 -- end process;
 
-temp_LEDCounter <= temp_contr (3 downto 2);
-
+--temp_LEDCounter <= temp_contr (3 downto 2);
+--^^ was inserted in s variable of MUX
 
                                 --Instantiating components
 ----------------------------------------------------------------------------------------------
 u1: sevenSegDecoder port map(input_s => tempLetter, optLetter => sevseg);
-c1: counter port map (clk => clk_100Mhz, output => temp_contr);
+c1: counter port map (clk => clk_100Mhz, reset => clr, output => temp_contr);
 d1: debouncer port map (btn => btnc, cclk => clk_100Mhz, clr => clr, outpt => tempReset);
-m1: sevenSegMux port map (s => temp_LEDCounter, letter => tempLetter, an => an);
-
+m1: sevenSegMux port map (inputs => tempInput ,s => temp_contr, letter => tempLetter, an => an);
+cd1: twoHzClkDivider port map (clk => clk_100Mhz, output => tempDivider);
+ma1: msgArray port map (clk => tempDivider, msgOutput => tempInput);
 
 end Behavioral;

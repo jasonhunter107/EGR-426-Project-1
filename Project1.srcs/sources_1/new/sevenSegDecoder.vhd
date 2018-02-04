@@ -51,6 +51,12 @@ begin
     when "0010" => optLetter <= "0100100"; --S
     when "0011" => optLetter <= "0000001"; --O
     when "0100" => optLetter <= "0001001"; --N
+    when "0101" => optLetter <= "1001000"; --H
+    when "0110" => optLetter <= "1000001"; --U
+    when "0111" => optLetter <= "0001001"; --N
+    when "1000" => optLetter <= "0001111"; --T
+    when "1001" => optLetter <= "0110000"; --E
+    when "1010" => optLetter <= "0111001"; --R
     when others => optLetter <= "1111111"; --Blank
     end case;
     

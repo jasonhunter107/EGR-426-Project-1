@@ -16,8 +16,10 @@ set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib {
   C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/counter.vhd
   C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/debouncer.vhd
+  C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/msgArray.vhd
   C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegDecoder.vhd
   C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegMux.vhd
+  C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/twoHzClkDivider.vhd
   C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sources_1/new/sevenSegTop.vhd
 }
 # Mark all dcp files as not used in implementation to prevent them from being

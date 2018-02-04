@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Thu Feb  1 12:19:00 2018
+| Date         : Sun Feb  4 15:16:04 2018
 | Host         : DESKTOP-IHS8QFI running 64-bit major release  (build 9200)
 | Command      : report_drc -file sevenSegTop_drc_routed.rpt -pb sevenSegTop_drc_routed.pb -rpx sevenSegTop_drc_routed.rpx
 | Design       : sevenSegTop
