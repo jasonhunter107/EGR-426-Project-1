@@ -1,49 +1,33 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: GVSU
+-- Engineer: Jason Hunter
 -- 
 -- Create Date: 01/23/2018 11:31:10 PM
--- Design Name: 
--- Module Name: 7seg_mux - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
+-- Design Name: Scrolling Marquee
+-- Module Name: sevenSegTop
+-- Project Name: EGR-426-Project-1
+-- Target Devices: Artix 7
+-- Description: Top level of the design, this connects all the components for the
+--              scrolling marquee design.
 ----------------------------------------------------------------------------------
-
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity sevenSegTop is
     Port ( 
-           clk_100Mhz : in STD_LOGIC;
-           clr : in STD_LOGIC;
-		   btnc: in STD_LOGIC;
-           --x : in STD_LOGIC_VECTOR (15 downto 0); --message array
-           sevseg : out STD_LOGIC_VECTOR (6 downto 0);
-           an : out STD_LOGIC_VECTOR (3 downto 0)
+           clk_100Mhz : in STD_LOGIC; --Clock from board
+           clr : in STD_LOGIC; --clr switch (never used)
+		   btnc: in STD_LOGIC; --center button on board
+           sevseg : out STD_LOGIC_VECTOR (6 downto 0); --seven segment pattern for each letter
+           an : out STD_LOGIC_VECTOR (3 downto 0); --an signal
+           dp : out STD_LOGIC --dp signal
          );
 end sevenSegTop;
 
 architecture Behavioral of sevenSegTop is
 
+--Seven segement LED decoder
 component sevenSegDecoder 
     Port (
     input_s : in STD_LOGIC_VECTOR (3 downto 0);
@@ -51,6 +35,7 @@ component sevenSegDecoder
     );
 end component;
 
+--2 bit counter
 component counter
     Port ( clk : in STD_LOGIC;
            reset : in STD_LOGIC;
@@ -58,6 +43,7 @@ component counter
            );
 end component;
 
+--Debouncer for button
 component debouncer 
     Port ( btn : in STD_LOGIC;
            cclk : in STD_LOGIC;
@@ -65,20 +51,24 @@ component debouncer
            outpt : out STD_LOGIC);
 end component;
 
+--Multiplexer for Seven segment display
 component sevenSegMux 
     Port ( inputs : in STD_LOGIC_VECTOR ( 15 downto 0);
            s : in STD_LOGIC_VECTOR (1 downto 0);
            letter : out STD_LOGIC_VECTOR (3 downto 0);
-           an : out STD_LOGIC_VECTOR (3 downto 0)
+           an : out STD_LOGIC_VECTOR (3 downto 0);
+           dp : out STD_LOGIC
            );
 end component;
 
-component twoHzClkDivider 
+--50 MHz clock divider
+component fiftyMHzClkDivider 
     Port ( clk : in STD_LOGIC;
            output : out STD_LOGIC
            );
 end component;
 
+--Component that holds name and outputs it through mux
 component msgArray
     Port ( clk : in STD_LOGIC;
            btn : in STD_LOGIC;
@@ -86,45 +76,23 @@ component msgArray
            );
 end component;
 
---signal s: STD_LOGIC_VECTOR( 1 downto 0);
---signal x : STD_LOGIC_VECTOR (15 downto 0);
--- x (3 downto 0) <= "0111";
--- when "00" => letter <= x (3 downto 0); an <= "0111";
---signal y : STD_LOGIC_VECTOR (3 downto 0);
-
 signal tempInput : STD_LOGIC_VECTOR (15 downto 0); --Letters in name
 signal tempLetter: STD_LOGIC_VECTOR (3 downto 0); --Individual letter for name going through decoder
 signal tempReset : STD_LOGIC; --determines if button is pressed
-signal temp_contr : STD_LOGIC_VECTOR (1 downto 0); --was (1 downto 0)
-signal temp_LEDCounter : STD_LOGIC_VECTOR (1 downto 0); --For switching between inputs in MUX
+signal temp_contr : STD_LOGIC_VECTOR (1 downto 0); --output of 2-bit counter
+signal temp_LEDCounter : STD_LOGIC_VECTOR (1 downto 0); --For switching and displaying letter between LED in MUX
 signal tempAn : STD_LOGIC_VECTOR (1 downto 0); --AN signal thats outputted through MUX
-signal tempDivider : STD_LOGIC; --Output of the 2Hz divider
+signal tempDivider : STD_LOGIC; --Output of the 50MHz divider
 
 begin
-
---an <= "0000"; --activate all LED's
-
---process (s (5 downto 2))
---begin
---    case (s (5 downto 2)) is
---    when "0000" => y (3 downto 0) <= "0000";
---    when "0001" => y (3 downto 0) <= "0001";
---    when "0010" => y (3 downto 0) <= "0010";
---    when "0011" => y (3 downto 0) <= "0011";
---    when others => y (3 downto 0) <= "1111";
---    end case;
--- end process;
-
---temp_LEDCounter <= temp_contr (3 downto 2);
---^^ was inserted in s variable of MUX
 
                                 --Instantiating components
 ----------------------------------------------------------------------------------------------
 u1: sevenSegDecoder port map(input_s => tempLetter, optLetter => sevseg);
 c1: counter port map (clk => clk_100Mhz, reset => clr, output => temp_contr);
 d1: debouncer port map (btn => btnc, cclk => clk_100Mhz, clr => clr, outpt => tempReset);
-m1: sevenSegMux port map (inputs => tempInput ,s => temp_contr, letter => tempLetter, an => an);
-cd1: twoHzClkDivider port map (clk => clk_100Mhz, output => tempDivider);
+m1: sevenSegMux port map (inputs => tempInput ,s => temp_contr, letter => tempLetter, an => an, dp => dp);
+cd1: fiftyMHzClkDivider port map (clk => clk_100Mhz, output => tempDivider);
 ma1: msgArray port map (clk => tempDivider, btn => tempReset, msgOutput => tempInput);
 
 end Behavioral;

@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Sun Feb  4 15:52:13 2018
+| Date         : Mon Feb 12 15:41:47 2018
 | Host         : DESKTOP-IHS8QFI running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file sevenSegTop_clock_utilization_routed.rpt
 | Design       : sevenSegTop
@@ -69,8 +69,8 @@ Table of Contents
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+----------------------+-------------+
 | Local Id | Driver Type/Pin | Constraint | Site/BEL         | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin           | Net         |
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+----------------------+-------------+
-| 0        | LDCE/Q          | None       | SLICE_X65Y21/AFF | X1Y0         |          20 |               0 |              |       | ma1/tempClk_reg/Q    | ma1/tempClk |
-| 1        | FDRE/Q          | None       | SLICE_X64Y26/CFF | X1Y0         |           2 |               1 |              |       | c1/clk_div_reg[10]/Q | c1/p_0_in   |
+| 0        | LDCE/Q          | None       | SLICE_X65Y22/AFF | X1Y0         |          20 |               0 |              |       | ma1/tempClk_reg/Q    | ma1/tempClk |
+| 1        | FDRE/Q          | None       | SLICE_X60Y23/CFF | X1Y0         |           2 |               1 |              |       | c1/clk_div_reg[10]/Q | c1/p_0_in   |
 +----------+-----------------+------------+------------------+--------------+-------------+-----------------+--------------+-------+----------------------+-------------+
 * Local Clocks in this context represents only clocks driven by non-global buffers
 ** Clock Loads column represents the clock pin loads (pin count)
@@ -86,7 +86,7 @@ Table of Contents
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | X0Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    1 |  1200 |    1 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   60 |  1500 |   49 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
+| X1Y0              |    1 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   60 |  1500 |   23 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1200 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1500 |    0 |   450 |    0 |    40 |    0 |    20 |    0 |    20 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1800 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |

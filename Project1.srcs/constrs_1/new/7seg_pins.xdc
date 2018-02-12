@@ -19,7 +19,7 @@ set_property IOSTANDARD LVCMOS33 [get_ports clk_100Mhz]
         set_property PACKAGE_PIN U7 [get_ports {sevseg[0]}]                    
             set_property IOSTANDARD LVCMOS33 [get_ports {sevseg[0]}]
             
- #mapping anode signals
+ #mapping anode signals and decimal signal
         set_property PACKAGE_PIN U2 [get_ports {an[0]}]                    
             set_property IOSTANDARD LVCMOS33 [get_ports {an[0]}]
         set_property PACKAGE_PIN U4 [get_ports {an[1]}]                    
@@ -28,6 +28,8 @@ set_property IOSTANDARD LVCMOS33 [get_ports clk_100Mhz]
             set_property IOSTANDARD LVCMOS33 [get_ports {an[2]}]
         set_property PACKAGE_PIN W4 [get_ports {an[3]}]                    
             set_property IOSTANDARD LVCMOS33 [get_ports {an[3]}]
+        set_property PACKAGE_PIN V7 [get_ports dp]                    
+            set_property IOSTANDARD LVCMOS33 [get_ports dp]
 			
 #mapping switches/buttons
 		set_property PACKAGE_PIN U18 [get_ports btnc]                    

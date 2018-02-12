@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Sun Feb  4 15:52:09 2018
+| Date         : Mon Feb 12 15:41:43 2018
 | Host         : DESKTOP-IHS8QFI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file sevenSegTop_methodology_drc_routed.rpt -rpx sevenSegTop_methodology_drc_routed.rpx
 | Design       : sevenSegTop
@@ -295,22 +295,22 @@ Related violations: <none>
 
 TIMING-17#53 Warning
 Non-clocked sequential cell  
-The clock pin ma1/tempMsg_reg[16]_srl12/CLK is not reached by a timing clock
+The clock pin ma1/tempMsg_reg[16]_srl13/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#54 Warning
 Non-clocked sequential cell  
-The clock pin ma1/tempMsg_reg[17]_srl12/CLK is not reached by a timing clock
+The clock pin ma1/tempMsg_reg[17]_srl13/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#55 Warning
 Non-clocked sequential cell  
-The clock pin ma1/tempMsg_reg[18]_srl12/CLK is not reached by a timing clock
+The clock pin ma1/tempMsg_reg[18]_srl13/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#56 Warning
 Non-clocked sequential cell  
-The clock pin ma1/tempMsg_reg[19]_srl12/CLK is not reached by a timing clock
+The clock pin ma1/tempMsg_reg[19]_srl13/CLK is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#57 Warning
