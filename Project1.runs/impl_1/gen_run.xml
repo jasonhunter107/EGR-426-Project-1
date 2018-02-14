@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1518467893">
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1518597433">
   <File Type="PWROPT-DRC" Name="sevenSegTop_drc_pwropted.rpt"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="sevenSegTop_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="sevenSegTop_timing_summary_init.rpt"/>

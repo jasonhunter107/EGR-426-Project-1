@@ -44,14 +44,18 @@ variable lout: line;
 --Creates the table of inputs and outputs
 begin
 WRITE (lout, NOW, right, 10, ns);
-WRITE (lout, string'(" clk --> "));
+WRITE (lout, string'(" |clk --> "));
 WRITE (lout, clk);
-WRITE (lout, string'(" output --> "));
+WRITE (lout, string'(" |reset --> "));
+WRITE (lout, reset);
+WRITE (lout, string'(" |output expected value --> "));
 WRITE (lout, tempOutput);
+WRITE (lout, string'(" |output observant value --> "));
+WRITE (lout, Shouldbe);
 WRITELINE(OUTPUT, lout);
 
 --Print statement when output has the wrong output
-Assert tempOutput = Shouldbe REPORT "Test failed" SEVERITY FAILURE;
+Assert tempOutput = Shouldbe REPORT "Test Failed: output observant value is not equal to expected value" SEVERITY FAILURE;
 
 end Monitor;
 
@@ -71,19 +75,33 @@ begin
 end process;
 
 --Begin simulation
+--Since it has slow clock divider built in the simulation needs to be longer
+--Type in command: "run 100000ns" to extend simulation
+-------------------------------------------------------------
 stim_proc: process
 begin
-    
+ 
    wait for 100 ns;
    reset <= '0';
     
-    --wait for 10 ns;
-    --Monitor("0001");
+    --First value of counter
+    wait for 30000 ns;
+    Monitor("01");
     
-  --  wait for 10 ns;
-   -- Monitor("0010");
+    --Second value of counter
+    wait for 20000 ns;
+    Monitor("10");
     
-    wait for CLK_period * 100;
+    --Third value of counter
+    wait for 20000 ns;
+    Monitor("11");
+    
+    --Counter reset but fails here because the value going through monitor is 1 not 0.
+    wait for 20000 ns;
+    Monitor("10"); --should be 01
+    
+    --Simulate for 100000ns 
+    wait for CLK_period * 10000;
 
   --End simulation
 end process;

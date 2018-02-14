@@ -27,27 +27,24 @@ architecture Behavioral of counter is
 
 --Temp variables for counter
 SIGNAL temp: STD_LOGIC_VECTOR (1 downto 0) := "00"; 
-signal clk_div: std_logic_vector (10 downto 0); --11-bits = 2,047 cycles
+signal clkpreScaler : STd_LOGIC_VECTOR (11 downto 0) := X"7FE";
+signal tempV : STD_LOGIC_VECTOR (11 downto 0) := (others => '0');
 begin 
 
 --A mini clock divider for the counter to slow it down
-ClkDivider: process (clk)
-begin 
-    if (rising_edge(clk)) then
-    clk_div <= clk_div + 1;
-    
-    end if;
- end process;
- 
- Counter: process(clk_div, reset)
+process(clk)
  begin
    --If reset is 1 then reset temp
    if (reset = '1') then
    temp <= "00";
    --Once clock divider reach its max then increment counter
- elsif rising_edge(clk_div(10)) then
-    temp <= temp + 1;
-    end if;
+ elsif rising_edge(clk) then
+    tempV <= tempV + 1;
+    if ( tempV > clkpreScaler) then
+       temp <= temp + 1;
+       tempV <= (others => '0');
+       end if;
+ end if;
     
   end process;
     

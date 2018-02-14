@@ -1,1 +1,0 @@
--wto "acd1b576b36d4b7d8f2fc97af44edc34" --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "debouncer_tb_behav" "xil_defaultlib.debouncer_tb" -log "elaborate.log" 

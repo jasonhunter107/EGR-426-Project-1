@@ -2,11 +2,11 @@
 # Webtalk v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Thu Feb  1 18:33:39 2018
-# Process ID: 2436
+# Start of session at: Wed Feb 14 03:28:04 2018
+# Process ID: 2332
 # Current directory: C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.sim/sim_1/behav
-# Command line: wbtcv.exe -mode batch -source C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.sim/sim_1/behav/xsim.dir/debouncer_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv.exe -mode batch -source C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.sim/sim_1/behav/xsim.dir/counter_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.sim/sim_1/behav/webtalk.log
 # Journal file: C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.sim/sim_1/behav\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.sim/sim_1/behav/xsim.dir/debouncer_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+source C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.sim/sim_1/behav/xsim.dir/counter_tb_behav/webtalk/xsim_webtalk.tcl -notrace
