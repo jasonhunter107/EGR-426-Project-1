@@ -1,21 +1,13 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: GVSU
+-- Engineer: Jason Hunter
 -- 
--- Create Date: 01/31/2018 02:07:30 AM
--- Design Name: 
--- Module Name: sevenSegMux_tb - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
+-- Create Date: 01/23/2018 11:31:10 PM
+-- Design Name: Scrolling Marquee
+-- Module Name: sevenSegMux_tb
+-- Project Name: EGR-426-Project-1
+-- Target Devices: Artix 7
+-- Description: Testbench for multiplexer
 ----------------------------------------------------------------------------------
 
 
@@ -24,86 +16,100 @@ use IEEE.STD_LOGIC_1164.ALL;
 use std.textio.all;
 use ieee.std_logic_textio.all;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity sevenSegMux_tb is
---  Port ( );
 end sevenSegMux_tb;
 
 architecture Behavioral of sevenSegMux_tb is
 
 component sevenSegMux 
-    Port ( --inputs : in STD_LOGIC_VECTOR ( 3 downto 0);
-           s : in STD_LOGIC_VECTOR (1 downto 0);
-           letter : out STD_LOGIC_VECTOR (3 downto 0);
-           an : out STD_LOGIC_VECTOR (3 downto 0)
+    Port ( inputs : in STD_LOGIC_VECTOR (15 downto 0); 
+           s : in STD_LOGIC_VECTOR (1 downto 0); 
+           letter : out STD_LOGIC_VECTOR (3 downto 0); 
+           an : out STD_LOGIC_VECTOR (3 downto 0); 
+           dp : out STD_LOGIC 
            );
 end component;
 
+--Temporary signals that are going to be assigned after for the component
 signal s : STD_LOGIC_VECTOR (1 downto 0);
-signal letter, an : STD_LOGIC_VECTOR (3 downto 0);
+signal inputs : STD_LOGIC_VECTOR (15 downto 0);
+signal letter, an: STD_LOGIC_VECTOR (3 downto 0);
+signal dp : STD_LOGIC := '1';
 
+--Creates the file logging for the simulation. The parameters are the three outputs of the multiplexer
 Procedure Monitor (Shouldbe: in STD_LOGIC_VECTOR (3 downto 0);
-                     Shouldbe1: in STD_LOGIC_VECTOR (3 downto 0)) is
+                     Shouldbe1: in STD_LOGIC_VECTOR (3 downto 0);
+                     Shouldbe2: in STD_LOGIC) is
 Variable lout: line;
 
+--Creates the table of inputs and outputs
 begin
 WRITE(lout, now, right, 10, ns);
-WRITE(lout, string'(" s --> "));
+WRITE(lout, string'(" |inputs --> "));
+WRITE(lout, inputs);
+WRITE(lout, string'(" |s --> "));
 WRITE(lout, s);
-WRITE(lout, string'(" letter --> "));
+WRITE(lout, string'(" |'letter' expected value --> "));
 WRITE(lout, letter);
-WRITE(lout, string'(" an --> "));
+WRITE(lout, string'(" |'letter' observant value --> "));
+WRITE(lout, Shouldbe);
+WRITE(lout, string'(" |'an' expected value--> "));
 WRITE(lout, an);
+WRITE(lout, string'(" |'an' observant value--> "));
+WRITE(lout, Shouldbe1);
+WRITE(lout, string'(" |'dp' expected value --> "));
+WRITE(lout, dp);
+WRITE(lout, string'(" |'dp' observant value --> "));
+WRITE(lout, Shouldbe2);
 WRITELINE(OUTPUT, lout);
 
-Assert letter = Shouldbe Report "Test failed" SEVERITY FAILURE;
-Assert an = Shouldbe1 Report "Test failed" SEVERITY FAILURE;
+--Print statement when letter has the wrong output
+Assert letter = Shouldbe Report "letter observant value is not equal to expected value" SEVERITY FAILURE;
+
+--Print statement when an has the wrong output
+Assert an = Shouldbe1 Report "an observant value is not equal to expected value" SEVERITY FAILURE;
+
+--Print statement when dp has the wrong output
+Assert dp = Shouldbe2 Report "dp observant value is not equal to expected value" SEVERITY FAILURE;
 
 end Monitor;
 
 
 begin
-M1: sevenSegMux port map (s => s, letter => letter, an => an);
 
+--Instantiate multiplexer
+M1: sevenSegMux port map (inputs => inputs, s => s, letter => letter, an => an, dp => dp);
+
+--Begin simulation
 stim_proc: process
 begin
 
 wait for 100 ns;
 
---Report "Beginning MUX test" SEVERITY NOTE;
+--Begin simulation by assigning values to inputs and reading the outputs
+Report "Beginning MUX test" SEVERITY NOTE;
 
     s <= "00";
-    wait for 1 ns;
-    Monitor("0000","0111");
---    Assert letter = "0000" REPORT "Failed Test 1" SEVERITY FAILURE;
---    Assert an = "0111" REPORT "Failed Test 1" SEVERITY FAILURE;
+    inputs <= X"0123";
+    wait for 20 ns;
+    Monitor("0000","0111",'1');
     
     s <= "01";
-    wait for 1 ns;
-    Monitor("0001","1011");
---    Assert letter = "0001" REPORT "Failed Test 2" SEVERITY FAILURE;
---    Assert an = "1011" REPORT "Failed Test 2" SEVERITY FAILURE;
+    wait for 20 ns;
+    Monitor("0001","1011",'1');
     
+     --This test should fail right here due to having the wrong output (letter) on monitor
     s <= "10";
-    wait for 1 ns;
-    Monitor("1111","1111"); --should be ("0010","1101");
---    Assert letter = "0010" REPORT "Failed Test 3" SEVERITY FAILURE;
---    Assert an = "1101" REPORT "Failed Test 3" SEVERITY FAILURE; --an = 1101
+    wait for 20 ns;
+    Monitor("1111","1111",'1'); --should be ("0010","1101",'1');
     
     s <= "11";
-    wait for 1 ns;
-    Monitor("0011","1110");
---    Assert letter = "0011" REPORT "Failed Test 4" SEVERITY FAILURE;
---    Assert an = "1110" REPORT "Failed Test 4" SEVERITY FAILURE;
+    wait for 20 ns;
+    Monitor("0011","1110",'1');
     
+    
+    --End simulation
     wait;
     
  end process;
