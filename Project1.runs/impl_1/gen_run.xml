@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1518597433">
-  <File Type="PWROPT-DRC" Name="sevenSegTop_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="sevenSegTop_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="sevenSegTop_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="sevenSegTop_power_routed.rpx"/>
   <File Type="PA-TCL" Name="sevenSegTop.tcl"/>
-  <File Type="OPT-HWDEF" Name="sevenSegTop.hwdef"/>
+  <File Type="INIT-TIMING" Name="sevenSegTop_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="sevenSegTop_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="sevenSegTop_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="sevenSegTop.vdi"/>
   <File Type="OPT-DCP" Name="sevenSegTop_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="sevenSegTop.hwdef"/>
   <File Type="OPT-DRC" Name="sevenSegTop_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="sevenSegTop_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="sevenSegTop_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="sevenSegTop_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="sevenSegTop_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="sevenSegTop_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="sevenSegTop.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="sevenSegTop_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="sevenSegTop.drc"/>
+  <File Type="BG-BIN" Name="sevenSegTop.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="sevenSegTop_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="sevenSegTop.msk"/>
+  <File Type="BG-DRC" Name="sevenSegTop.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="sevenSegTop_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="sevenSegTop.bgn"/>
+  <File Type="BITSTR-MSK" Name="sevenSegTop.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="sevenSegTop_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="sevenSegTop.bgn"/>
   <File Type="ROUTE-PWR" Name="sevenSegTop_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="sevenSegTop_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="sevenSegTop_route_status.rpt"/>

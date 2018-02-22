@@ -6,4 +6,4 @@ Time resolution is 1 ps
   90100 ns |clk --> 1 |reset --> 0 |output expected value --> 00 |output observant value --> 10
 Failure: Test Failed: output observant value is not equal to expected value
 Time: 90100 ns  Iteration: 0  Process: /counter_tb/stim_proc  File: C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sim_1/new/counter_tb.vhd
-$finish called at time : 90100 ns : File "C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sim_1/new/counter_tb.vhd" Line 94
+$finish called at time : 90100 ns : File "C:/Users/Jason/Documents/EGR426/Projects/EGR-426-Project-1/Project1.srcs/sim_1/new/counter_tb.vhd" Line 101
